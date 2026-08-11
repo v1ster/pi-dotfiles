@@ -1,19 +1,23 @@
 {
   "lastChangelogVersion": "0.84.1",
-  "defaultProvider": "opencode",
-  "defaultModel": "deepseek-v4-flash-free",
+  "defaultProvider": "deepseek",
+  "defaultModel": "deepseek-v4-flash",
   "defaultThinkingLevel": "high",
-  "compaction": {
-    "enabled": true
-  },
+  "enableSkillCommands": true,
+  "theme": "dark/dark",
   "retry": {
     "enabled": true
   },
-  "packages": [
-    "D:\\playground\\pi-dotfiles"
-  ],
-  "theme": "light",
+  "packages": [],
+  "skills": [],
+  "steeringMode": "one-at-a-time",
+  "doubleEscapeAction": "tree",
+  "compaction": {
+    "enabled": true
+  },
   "enabledModels": [
+    "deepseek/deepseek-v4-flash",
+    "deepseek/deepseek-v4-pro",
     "opencode/mimo-v2.5-free",
     "opencode/deepseek-v4-flash-free"
   ]

@@ -1,0 +1,25 @@
+{
+  "providers": {
+    "llama-cpp": {
+      "baseUrl": "http://localhost:8000/v1",
+      "api": "openai-completions",
+      "apiKey": "none",
+      "models": [
+        {
+          "id": "mudler/Qwen3.6-35B-A3B-APEX-GGUF"
+        }
+      ]
+    },
+    "lm-studio": {
+      "baseUrl": "http://192.168.31.107:1234/v1",
+      "api": "openai-completions",
+      "apiKey": "none",
+      "models": [
+        {
+          "id": "qwen/qwen3.5-9b"
+        }
+      ]
+    }
+
+  }
+}
