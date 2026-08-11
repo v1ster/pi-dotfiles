@@ -1,0 +1,19 @@
+# 密钥 — 绝不提交
+auth.json
+
+# 会话记录 — 机器相关
+sessions/
+
+# 平台相关工具 (rg/fd 等)
+bin/
+
+# 项目信任记录 — 机器相关
+trust.json
+
+# 安装的 packages (npm installs)
+npm/
+
+# 临时/日志
+*.log
+.DS_Store
+Thumbs.db

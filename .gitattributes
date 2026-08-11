@@ -1,0 +1,5 @@
+# JSON/文本统一 LF，避免 Windows CRLF 换行导致 diff 混乱
+* text=auto
+*.json text eol=lf
+*.md text eol=lf
+*.mjs text eol=lf
