@@ -1,8 +1,8 @@
 {
-  "lastChangelogVersion": "0.84.1",
+  "lastChangelogVersion": "0.84.2",
   "defaultProvider": "opencode-go",
-  "defaultModel": "deepseek-v4-flash",
-  "defaultThinkingLevel": "high",
+  "defaultModel": "gpt-5.6-luna",
+  "defaultThinkingLevel": "max",
   "enableSkillCommands": true,
   "theme": "dark/dark",
   "retry": {
@@ -22,6 +22,5 @@
     "opencode-go/kimi-k3",
     "opencode-go/deepseek-v4-flash",
     "deepseek/deepseek-v4-flash"
-
   ]
 }

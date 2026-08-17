@@ -32,12 +32,54 @@ const RULES: Rule[] = [
   { pattern: /:\(\)\s*\{\s*:\|:&\s*\};:/, hint: "fork bomb" },
 ];
 
+/** 按 shell 规则切分参数，引号内的空格不会被拆开 */
+function tokenizeArgs(s: string): string[] {
+  const tokens: string[] = [];
+  const re = /"([^"]*)"|'([^']*)'|(\S+)/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(s))) tokens.push(m[1] ?? m[2] ?? m[3]);
+  return tokens;
+}
+
+/**
+ * 判断命令是否为仅删除 /tmp 路径下文件的 rm 操作（视为安全，无需确认）
+ *   安全: rm -rf /tmp/cache、rm -f /tmp/foo bar、rm -rf "/tmp/a b"、rm -rf /tmp/*
+ *   不安全: rm -rf /tmp/x /etc/passwd、rm -rf /tmpfoo、rm -rf /tmp/x; sudo reboot
+ */
+function isSafeTmpRm(command: string): boolean {
+  // 含命令拼接/管道/变量展开/子 shell 时不做豁免
+  if (/[;&|`$]/.test(command)) return false;
+
+  // 提取 rm 之后的参数并切分（处理引号内的空格）
+  const m = command.match(/\brm\b\s+(.+)$/);
+  if (!m) return false;
+  const args = tokenizeArgs(m[1]);
+
+  let hasPath = false;
+  for (const arg of args) {
+    // 跳过选项（-rf、--preserve-root 等）与 "--" 分隔符
+    if (arg === "--" || arg.startsWith("-")) continue;
+    hasPath = true;
+    // 所有路径必须位于 /tmp 下（或 /tmp 本身）
+    if (!/^\/tmp(?:\/|$)/.test(arg)) return false;
+  }
+  return hasPath;
+}
+
 export default function (pi: ExtensionAPI) {
   pi.on("tool_call", async (event, ctx) => {
     if (!isToolCallEventType("bash", event)) return undefined;
 
     const command = event.input.command;
-    const matched = RULES.filter((r) => r.pattern.test(command));
+    let matched = RULES.filter((r) => r.pattern.test(command));
+
+    // 仅删除 /tmp 路径下文件的 rm 操作视为安全，跳过确认
+    if (
+      matched.some((r) => r.hint === "rm 删除文件") &&
+      isSafeTmpRm(command)
+    ) {
+      matched = matched.filter((r) => r.hint !== "rm 删除文件");
+    }
 
     if (matched.length === 0) return undefined;
 
