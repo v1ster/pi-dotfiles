@@ -92,9 +92,12 @@ export default function (pi: ExtensionAPI) {
     }
 
     const hints = matched.map((m) => m.hint).join("、");
+
+    // —— 不截断方案：命令已在工具卡片/模拟终端中展示，overlay 只做定性确认
+    //    固定 2 行文案，overlay 高度恒定 ≈7 行，永不 > termHeight，不会闪烁
     const allowed = await ctx.ui.confirm(
-      "⚠️ 敏感命令需要批准",
-      `检测到 [${hints}]\n\n命令: ${command}\n\n是否允许执行？`,
+      "⚠️ 请确认操作",
+      `检测到 [${hints}] 敏感操作, 是否允许?`,
     );
 
     if (!allowed) {
