@@ -1,0 +1,21 @@
+{
+  "default": "default",
+  "skills": {
+    "codebase-design": false,
+    "diagnosing-bugs": false,
+    "domain-modeling": false,
+    "frontend-design": false,
+    "grilling": false,
+    "ponytail-audit": false,
+    "ponytail-gain": false,
+    "ponytail-help": false,
+    "ponytail-review": false,
+    "prototype": false,
+    "wizard": false,
+    "ponytail-debt": false,
+    "docx": false,
+    "pdf": false,
+    "pptx": false,
+    "xlsx": false
+  }
+}

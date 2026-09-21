@@ -4,6 +4,7 @@ auth.json
 models-store.json
 # settings.json
 models.json
+antigravity-accounts.json
 
 # 会话记录 — 机器相关
 sessions/
