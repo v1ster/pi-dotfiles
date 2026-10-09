@@ -1,5 +1,5 @@
 {
-  "lastChangelogVersion": "0.86.1",
+  "lastChangelogVersion": "1.1.0",
   "defaultProvider": "antigravity",
   "defaultModel": "gemini-3.7-flash",
   "defaultThinkingLevel": "max",
@@ -65,7 +65,10 @@
         "-skills/engineering/tdd/SKILL.md",
         "-skills/in-progress/pr/SKILL.md",
         "-skills/engineering/resolving-merge-conflicts/SKILL.md",
-        "+skills/engineering/prototype/SKILL.md"
+        "+skills/engineering/prototype/SKILL.md",
+        "-skills\\engineering\\pr\\SKILL.md",
+        "-skills\\in-progress\\chief-of-staff\\SKILL.md",
+        "-skills\\engineering\\implement-spec\\SKILL.md"
       ]
     },
     {

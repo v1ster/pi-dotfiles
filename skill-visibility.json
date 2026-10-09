@@ -16,6 +16,7 @@
     "docx": false,
     "pdf": false,
     "pptx": false,
-    "xlsx": false
+    "xlsx": false,
+    "retro": false
   }
 }
