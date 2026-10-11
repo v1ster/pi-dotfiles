@@ -2,7 +2,7 @@
   "lastChangelogVersion": "1.1.0",
   "defaultProvider": "antigravity",
   "defaultModel": "gemini-3.7-flash",
-  "defaultThinkingLevel": "max",
+  "defaultThinkingLevel": "high",
   "enableSkillCommands": true,
   "theme": "dark/dark",
   "retry": {
@@ -36,7 +36,6 @@
       "skills": [
         "-skills/engineering/ask-matt/SKILL.md",
         "-skills/engineering/grill-with-docs/SKILL.md",
-        "-skills/engineering/improve-codebase-architecture/SKILL.md",
         "-skills/engineering/setup-matt-pocock-skills/SKILL.md",
         "-skills/engineering/to-spec/SKILL.md",
         "-skills/engineering/to-tickets/SKILL.md",
@@ -65,10 +64,12 @@
         "-skills/engineering/tdd/SKILL.md",
         "-skills/in-progress/pr/SKILL.md",
         "-skills/engineering/resolving-merge-conflicts/SKILL.md",
-        "+skills/engineering/prototype/SKILL.md",
-        "-skills\\engineering\\pr\\SKILL.md",
-        "-skills\\in-progress\\chief-of-staff\\SKILL.md",
-        "-skills\\engineering\\implement-spec\\SKILL.md"
+        "-skills/engineering/improve-codebase-architecture/SKILL.md",
+        "-skills/engineering/implement-spec/SKILL.md",
+        "-skills/engineering/pr/SKILL.md",
+        "-skills/engineering/prototype/SKILL.md",
+        "-skills/engineering/retro/SKILL.md",
+        "-skills/in-progress/chief-of-staff/SKILL.md"
       ]
     },
     {
@@ -94,9 +95,20 @@
         "+skills/writing-plans/SKILL.md"
       ]
     },
-    "git:github.com/DietrichGebert/ponytail",
+    {
+      "source": "git:github.com/DietrichGebert/ponytail",
+      "extensions": [
+        "+pi-extension/index.js"
+      ]
+    },
     "npm:pi-context-view",
-    "git:github.com/Rahularya01/pi-antigravity"
+    {
+      "source": "git:github.com/Rahularya01/pi-antigravity",
+      "extensions": [
+        "-src/features/generate-image.ts",
+        "+src/features/google-search.ts"
+      ]
+    }
   ],
   "skills": [
     "-skills/plans-first/SKILL.md"
