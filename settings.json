@@ -1,8 +1,8 @@
 {
-  "lastChangelogVersion": "1.1.0",
+  "lastChangelogVersion": "1.3.0",
   "defaultProvider": "antigravity",
-  "defaultModel": "gemini-3.7-flash",
-  "defaultThinkingLevel": "high",
+  "defaultModel": "gemini-3.8-flash",
+  "defaultThinkingLevel": "max",
   "enableSkillCommands": true,
   "theme": "dark/dark",
   "retry": {
@@ -24,11 +24,7 @@
         "-skills/mcp-builder/SKILL.md",
         "-skills/skill-creator/SKILL.md",
         "-skills/discernment-nudge/SKILL.md",
-        "-skills/doc-coauthoring/SKILL.md",
-        "+skills/pdf/SKILL.md",
-        "+skills/pptx/SKILL.md",
-        "+skills/xlsx/SKILL.md",
-        "+skills/docx/SKILL.md"
+        "-skills/doc-coauthoring/SKILL.md"
       ]
     },
     {
