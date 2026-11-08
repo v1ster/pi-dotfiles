@@ -11,6 +11,7 @@ sessions/
 
 # 平台相关工具 (rg/fd 等)
 bin/
+install/
 
 # 项目信任记录 — 机器相关
 trust.json

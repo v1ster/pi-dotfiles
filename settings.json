@@ -1,8 +1,8 @@
 {
-  "lastChangelogVersion": "1.3.0",
+  "lastChangelogVersion": "1.5.0",
   "defaultProvider": "antigravity",
   "defaultModel": "gemini-3.8-flash",
-  "defaultThinkingLevel": "max",
+  "defaultThinkingLevel": "medium",
   "enableSkillCommands": true,
   "theme": "dark/dark",
   "retry": {
@@ -65,7 +65,8 @@
         "-skills/engineering/pr/SKILL.md",
         "-skills/engineering/prototype/SKILL.md",
         "-skills/engineering/retro/SKILL.md",
-        "-skills/in-progress/chief-of-staff/SKILL.md"
+        "-skills/in-progress/chief-of-staff/SKILL.md",
+        "-skills/in-progress/software-factory/SKILL.md"
       ]
     },
     {
@@ -118,5 +119,9 @@
   "extensions": [
     "-extensions/command-guard.ts"
   ],
-  "tuiMode": "regular"
+  "tuiMode": "regular",
+  "extensionChangelogVersions": {
+    "{\"source\":\"git:github.com/Rahularya01/pi-antigravity\",\"scope\":\"user\"}": "0.12.0",
+    "{\"source\":\"npm:pi-context-view\",\"scope\":\"user\"}": "0.8.3"
+  }
 }
